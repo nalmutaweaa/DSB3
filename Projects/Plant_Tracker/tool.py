@@ -1,17 +1,23 @@
 import pandas as pd
 import streamlit as st
-
-
-#load data
-def load_data(path):
-    "this function loads csv data"
-    df= pd.read_csv(path)
+#new load 
+from pathlib import Path
+BASE_DIR = Path(__file__).resolve().parent
+def load_data(filename):
+    """This function loads CSV data."""
+    df = pd.read_csv(BASE_DIR / filename)
     return df
+
+#old load data
+#def load_data(path):
+   # "this function loads csv data"
+   # df= pd.read_csv(path)
+   # return df
 
 #f1: add function
 def add_plants(name,location,date,water_freq,sunlight,season):
     "thic function adds and stores new planys to csv"
-    plant=pd.read_csv('plants.csv')
+    plant=load_data('plants.csv')
     new_plant = pd.DataFrame([{
     "name":name,
     "location":location,
@@ -26,7 +32,7 @@ def add_plants(name,location,date,water_freq,sunlight,season):
 #f2 : add activity 
 def add_activity(name,activity,date,img,height):
     "this function adds new activity in activity csv"
-    activity_data=pd.read_csv('activity.csv')
+    activity_data=load_data('activity.csv')
     new_activity = pd.DataFrame([{
     "plant":name,
     "activity":activity,
@@ -42,9 +48,9 @@ def due_care():
     "this function displays plants due care"
     due_care=[] 
     today= pd.to_datetime("today") #get today date
-    activity_data=pd.read_csv("activity.csv")
+    activity_data=load_data("activity.csv")
     activity_data["date"] = pd.to_datetime(activity_data["date"],format="mixed")
-    plant_data=pd.read_csv('plants.csv')
+    plant_data=load_data('plants.csv')
     for plant, water_freq in zip(plant_data["name"], plant_data["water_freq"]):
         watering= activity_data[(activity_data["plant"] == plant) & (activity_data["activity"] == "Watering")] 
         if watering.empty:
@@ -68,7 +74,7 @@ client = OpenAI(
 #get plant info
 def get_info(plant_name):
     "this functions gets selected plant activities to be passed as prompt"
-    activity_data=pd.read_csv('activity.csv')
+    activity_data=load_data('activity.csv')
     info=activity_data[activity_data['plant']== plant_name]
     return info
 
@@ -106,7 +112,7 @@ def get_season(today):
 
 def recommend_plant(season):
     "get the plant recommended for this season from my csv"
-    plant_data=pd.read_csv('plants.csv')
+    plant_data=load_data('plants.csv')
     recommended_plants= plant_data[plant_data['season']== season]
     return recommended_plants['name'].unique()
 
@@ -133,7 +139,7 @@ def adjuest_watering (name, this_season,plant_season,plant_water):
 
 def matching(name,water_freq,sunglight,season):
     "this function returns matching plants based on ater_freq,sunglight,season"
-    plant_data=pd.read_csv("plants.csv")
+    plant_data=load_data("plants.csv")
     matching = plant_data[
         (plant_data["water_freq"] == water_freq)
         & (plant_data["sunlight"] == sunglight)
