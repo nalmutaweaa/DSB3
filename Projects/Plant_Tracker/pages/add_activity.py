@@ -22,5 +22,5 @@ if submitted:
 			file.write(picture.getbuffer())
 	else:
 		img_path=""
-	mytool.add_activity(name, activity, date, picture, height)
+	mytool.add_activity(name, activity, date, img_path, height)
 	st.success("Added")

@@ -58,7 +58,7 @@ from openai import OpenAI
 #from dotenv import load_dotenv
 #import os
 #load_dotenv('.env')
-openai_api_key = st.secrets['api_key']
+openai_api_key = st.secrets['OPENAI_API_KEY']
 if not openai_api_key:
     raise RuntimeError("API KEY is not configured")
 client = OpenAI(
