@@ -1,0 +1,16 @@
+,Unnamed: 0.1,Unnamed: 0,id,name,location,date,water_freq,sunlight,season
+0,0.0,0.0,,Lily,Balcony,9/17/2026 15:07,2,Low,Summer
+1,1.0,1.0,,Mint,Front Garden,9/1/2026 19:38,1,Low,Spring
+2,2.0,2.0,,Plam Tree,Front Garden,9/6/2026 19:38,1,High,Summer
+3,3.0,3.0,,Tulips,Balcony,9/6/2026 19:38,2,Medium,Spring
+4,4.0,4.0,,Mums,Front Garden,9/19/2026 19:56,4,Low,Fall
+5,5.0,5.0,,Pumpkin ,Front Garden,9/19/2026 21:52,3,Low,Summer
+6,6.0,6.0,,Tomato,Back Garden,9/1/2026 21:58,2,High,Fall
+7,7.0,7.0,,Cucumber,Back Garden,9/1/2026 21:59,1,High,Fall
+8,8.0,8.0,,Carrot,Front Garden,9/19/2026 21:59,3,High,Winter
+9,9.0,9.0,,Sunflower,Balcony,9/1/2026 22:00,1,High,Spring
+10,10.0,10.0,,Hibiscus,Balcony,9/1/2026 22:01,2,Medium,Spring
+11,11.0,11.0,,Date Palm,Front Garden,9/18/2026 22:01,3,High,Summer
+12,12.0,12.0,,Red Rose,Balcony,2026-09-01 21:36:00,2,Medium,Spring
+13,13.0,,,Daisy,Front Garden,2026-09-21 13:06:00,2,Medium,Spring
+14,,,,,,2026-09-21 13:12:00,1,Low,Summer
