@@ -56,10 +56,12 @@ def due_care():
 #f4: doctor
 from openai import OpenAI
 
-from dotenv import load_dotenv
-import os
-load_dotenv('.env')
-openai_api_key = os.getenv('api_key')
+#from dotenv import load_dotenv
+#import os
+#load_dotenv('.env')
+openai_api_key = st.secrets('api_key')
+if not openai_api_key:
+    raise RuntimeError("API KEY is not configured")
 client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
     api_key= openai_api_key
