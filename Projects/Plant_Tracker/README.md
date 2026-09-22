@@ -68,23 +68,19 @@ The page:
 
 ### 🩹 Plant Due Care
 
-Shows plants that are currently due for watering.
-
-The application checks the latest watering date for each plant and compares it with its watering frequency.
-
-If the number of days since the last watering is greater than or equal to the watering frequency, the app displays a reminder.
+Shows plants that are currently due for watering. The application checks the latest watering date for each plant and compares it with its watering frequency.f the number of days since the last watering is greater than or equal to the watering frequency, the app displays a reminder.
 
 ### 🧚 Ask Dr. Planty
 
 An AI plant-care assistant.
 
-The user selects a plant and enters a question or symptom. The selected plant's information and activity history are passed to the LLM to provide possible causes, care advice, and a suggested recovery plan.
+The user selects a plant and enters a question or symptom. The selected plant's information and activity history are passed to the LLM to provide possible causes, care advice, and a suggested recovery plan using Open AI mode from openrouter.
 
 ## Data
 
 The application stores plant information in:
 
-- `plants.csv`
+- `plants.csv` and `activity.csv`
 
 Plant activity records are also stored in CSV format.
 
@@ -95,3 +91,8 @@ Plant activity records are also stored in CSV format.
 - Pandas
 - RapidAPI
 - OpenRouter
+
+## Links
+Streamlit: https://planttrackerapp.streamlit.app/
+Github: https://github.com/nalmutaweaa/DSB3.git
+Video: https://drive.google.com/file/d/1n0c-ySZRLoIpcUU1gpLwCKxKc0qNtczE/view?usp=sharing
